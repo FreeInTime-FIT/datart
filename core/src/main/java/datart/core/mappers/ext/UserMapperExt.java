@@ -35,7 +35,7 @@ public interface UserMapperExt extends UserMapper {
             "SELECT ",
             "	u.*  ",
             "FROM ",
-            "	`user` u  ",
+            "	user u  ",
             "WHERE ",
             "	u.username = #{username} or ",
             "	u.email = #{username}"
@@ -46,7 +46,7 @@ public interface UserMapperExt extends UserMapper {
             "SELECT ",
             "	COUNT(*)  ",
             "FROM ",
-            "	`user` u  "
+            "	user u  "
     })
     int selectUserCount();
 
@@ -54,7 +54,7 @@ public interface UserMapperExt extends UserMapper {
             "SELECT " +
                     "	u.*  " +
                     "FROM " +
-                    "	`user` u  " +
+                    "	user u  " +
                     "WHERE " +
                     "	u.email = #{email}"
     })
@@ -63,14 +63,14 @@ public interface UserMapperExt extends UserMapper {
     @Select({"SELECT " +
             "	count( DISTINCT u.email )  " +
             "FROM " +
-            "	`user` u  " +
+            "	user u  " +
             "WHERE " +
             "	u.email = #{email}"})
     long countEmail(@Param("email") String email);
 
     @Select({
             " select * ",
-            " from `user` u",
+            " from user u",
             " where ",
             " lower(`username`) like #{keyword}",
             " or lower(`name`) like #{keyword}",
@@ -82,14 +82,14 @@ public interface UserMapperExt extends UserMapper {
             "SELECT " +
                     "	u.*  " +
                     "FROM " +
-                    "	`user` u  " +
+                    "	user u  " +
                     "WHERE " +
                     "	u.`username` = #{username}"
     })
     User selectByUsername(@Param("username") String username);
 
     @Update({
-            "UPDATE `user` u " +
+            "UPDATE user u " +
                     "SET u.active = 1  " +
                     "WHERE " +
                     "	u.active = 0  " +

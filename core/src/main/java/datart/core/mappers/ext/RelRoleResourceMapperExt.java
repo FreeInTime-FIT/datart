@@ -17,7 +17,7 @@ public interface RelRoleResourceMapperExt extends RelRoleResourceMapper {
             "FROM ",
             "	rel_role_resource rrr ",
             "	JOIN rel_role_user rru ",
-            "	JOIN `user` u ON u.id = rru.user_id  ",
+            "	JOIN user u ON u.id = rru.user_id  ",
             "	AND rrr.role_id = rru.role_id  ",
             "	AND u.id = #{userId}"
     })
@@ -29,7 +29,7 @@ public interface RelRoleResourceMapperExt extends RelRoleResourceMapper {
             "FROM ",
             "	rel_role_resource rrr ",
             "	JOIN rel_role_user rru ",
-            "	JOIN `user` u ON u.id = rru.user_id  ",
+            "	JOIN user u ON u.id = rru.user_id  ",
             "	AND rrr.org_id = #{orgId}  ",
             "	AND rrr.role_id = rru.role_id  ",
             "	AND u.id = #{userId} ",

@@ -52,7 +52,7 @@ public interface RoleMapperExt extends RoleMapper {
             "SELECT " +
                     " *  " +
                     "FROM " +
-                    " `user` u " +
+                    " user u " +
                     " JOIN rel_role_user rru " +
                     " JOIN role r ON u.id = rru.user_id  " +
                     " AND r.id = #{roleId}  " +
@@ -76,7 +76,7 @@ public interface RoleMapperExt extends RoleMapper {
             "SELECT " +
                     "	u.*  " +
                     "FROM " +
-                    "	`user` u " +
+                    "	user u " +
                     "	JOIN rel_role_user rru ON rru.user_id = u.id  " +
                     "	AND rru.role_id = #{roleId}"
     })
@@ -111,7 +111,7 @@ public interface RoleMapperExt extends RoleMapper {
     Role selectOrgOwnerRole(@Param("orgId") String orgId);
 
     @Select({
-            "SELECT u.* FROM `user` u JOIN rel_role_user rru JOIN role r ON u.id=rru.user_id AND rru.role_id=r.id AND r.type='ORG_OWNER' AND r.org_id=#{orgId}"
+            "SELECT u.* FROM user u JOIN rel_role_user rru JOIN role r ON u.id=rru.user_id AND rru.role_id=r.id AND r.type='ORG_OWNER' AND r.org_id=#{orgId}"
     })
     List<User> selectOrgOwners(String orgId);
 

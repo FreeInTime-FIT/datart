@@ -27,7 +27,7 @@ public interface OrganizationMapperExt extends OrganizationMapper {
             "SELECT " +
                     "	u.*  " +
                     "FROM " +
-                    "	`user` u " +
+                    "	user u " +
                     "	JOIN rel_user_organization ruo ON u.id = ruo.user_id  " +
                     "	AND ruo.org_id = #{orgId}"
     })
@@ -68,7 +68,7 @@ public interface OrganizationMapperExt extends OrganizationMapper {
             "SELECT ",
             " *  ",
             "FROM ",
-            " `user` u ",
+            " user u ",
             " JOIN rel_role_user rru ",
             " JOIN role r ON r.type = 'ORG_OWNER'  ",
             " AND r.org_id = #{orgId} AND r.id = rru.role_id AND rru.user_id = u.id"

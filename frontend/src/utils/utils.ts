@@ -384,7 +384,7 @@ export function newIssueUrl({ type, ...options }) {
     issuesUrl = repoUrl;
   } else {
     throw new Error(
-      'You need to specify either the `repoUrl` option or both the `user` and `repo` options',
+      'You need to specify either the `repoUrl` option or both the user and `repo` options',
     );
   }
 

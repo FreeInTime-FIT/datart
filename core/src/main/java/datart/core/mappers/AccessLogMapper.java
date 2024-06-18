@@ -20,7 +20,7 @@ public interface AccessLogMapper extends CRUDMapper {
     int deleteByPrimaryKey(String id);
 
     @Insert({
-        "insert into access_log (id, `user`, ",
+        "insert into access_log (id, user, ",
         "resource_type, resource_id, ",
         "access_type, access_time, ",
         "duration)",
@@ -36,7 +36,7 @@ public interface AccessLogMapper extends CRUDMapper {
 
     @Select({
         "select",
-        "id, `user`, resource_type, resource_id, access_type, access_time, duration",
+        "id, user, resource_type, resource_id, access_type, access_time, duration",
         "from access_log",
         "where id = #{id,jdbcType=VARCHAR}"
     })
@@ -56,7 +56,7 @@ public interface AccessLogMapper extends CRUDMapper {
 
     @Update({
         "update access_log",
-        "set `user` = #{user,jdbcType=VARCHAR},",
+        "set user = #{user,jdbcType=VARCHAR},",
           "resource_type = #{resourceType,jdbcType=VARCHAR},",
           "resource_id = #{resourceId,jdbcType=VARCHAR},",
           "access_type = #{accessType,jdbcType=VARCHAR},",

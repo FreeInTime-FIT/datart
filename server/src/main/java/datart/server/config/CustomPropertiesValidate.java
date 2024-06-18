@@ -83,7 +83,7 @@ public class CustomPropertiesValidate implements EnvironmentPostProcessor {
             String configName = getConfigName(violation.getRootBeanClass(), violation.getPropertyPath().toString());
             errorMessages.add(configName + violation.getMessage());
         }
-        if (errorMessages.size() > 0) {
+        if (!errorMessages.isEmpty()) {
             String msg = "Failed to get the necessary parameters, please check the configuration in the file(config/datart.conf)\nThe reasons: ";
             msg = msg + errorMessages.getFirst();
             errorMessages.removeFirst();
@@ -118,7 +118,7 @@ public class CustomPropertiesValidate implements EnvironmentPostProcessor {
                 }
                 // add demo propertySource
                 List<PropertySource<?>> propertySources = new YamlPropertySourceLoader().load("demo", new ClassPathResource("application-demo.yml"));
-                if (propertySources != null && propertySources.size() > 0) {
+                if (propertySources != null && !propertySources.isEmpty()) {
                     for (PropertySource<?> propertySource : propertySources) {
                         environment.getPropertySources().addFirst(propertySource);
                     }
@@ -160,7 +160,7 @@ public class CustomPropertiesValidate implements EnvironmentPostProcessor {
 
     private String getDefaultDBUrl(ConfigurableEnvironment environment) {
         List<String> activeProfiles = Arrays.asList(environment.getActiveProfiles());
-        if (activeProfiles.size() > 0 && !Arrays.asList("demo", "config").containsAll(activeProfiles)) {
+        if (!activeProfiles.isEmpty() && !Arrays.asList("demo", "config").containsAll(activeProfiles)) {
             // running other profiles
             return "";
         }
