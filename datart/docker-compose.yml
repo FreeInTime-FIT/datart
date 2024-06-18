@@ -1,0 +1,12 @@
+services:
+  datart:
+    image: datart/datart
+    restart: always
+    ports:
+      - 8080:8080
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./datart.conf:/datart/config/datart.conf
+      - ./files:/datart/files

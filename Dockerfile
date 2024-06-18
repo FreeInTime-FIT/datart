@@ -1,4 +1,4 @@
-FROM java:8
+FROM java:openjdk-8
 LABEL "author"="tl"
 RUN mkdir /datart
 COPY ./bin/ /datart/bin/
