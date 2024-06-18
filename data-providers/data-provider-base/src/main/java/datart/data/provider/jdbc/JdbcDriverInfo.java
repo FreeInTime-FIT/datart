@@ -36,10 +36,10 @@ public class JdbcDriverInfo {
     @NotBlank
     private String driverClass;
 
-    @NotBlank
+
     private String literalQuote;
 
-    @NotBlank
+
     private String identifierQuote;
 
     private String sqlDialect;
