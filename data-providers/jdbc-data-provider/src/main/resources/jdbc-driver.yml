@@ -1,3 +1,8 @@
+TAO_RS:
+  db-type: TAO_RS
+  name: TAO_RS
+  driver-class: com.taosdata.jdbc.rs.RestfulDriver
+  url-prefix: jdbc:TAOS-RS://
 ACCESS:
   db-type: ACCESS
   name: ACCESS
