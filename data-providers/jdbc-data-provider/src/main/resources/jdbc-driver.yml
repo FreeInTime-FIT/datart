@@ -3,6 +3,10 @@ TAO_RS:
   name: TAO_RS
   driver-class: com.taosdata.jdbc.rs.RestfulDriver
   url-prefix: jdbc:TAOS-RS://
+  literal-quote: "`"
+  identifier-quote: "`"
+  literal-end-quote: "`"
+  identifier-end-quote: "`"
 ACCESS:
   db-type: ACCESS
   name: ACCESS
